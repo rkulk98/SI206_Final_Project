@@ -505,14 +505,16 @@ if __name__ == '__main__':
 		if command == "year":
 			score_by_year()
 		if command == "help":
-			statement1 = "1.) Enter 'ratings' to view a Pie chart breaking down book-movie adaptations by rating "
-			statement2 = "2.) Enter 'authors' to view a Grouped bar chart comparing the top 5 authors with the highest Good Reads score, as compared to their movie’s imdbScore, and Metascore "
-			statement3 = "3.) Enter 'earnings' to view a Grouped bar chart comparing the imdbScore to the GoodReads rating of the movies that are ranked in the top 5 for box office earnings"
-			statement4 = "4.) Enter 'year' to view show grouped bar chart of all adaptations in a year of your choosing comparing Good Read’s score to Metascore and imdbScore"
+			statement1 = "1.)Enter 'ratings' to view a Pie chart breaking down book-movie adaptations by rating "
+			statement2 = "2.)Enter 'authors' to view a Grouped bar chart comparing the top 5 authors with the highest Good Reads score, as compared to their movie’s imdbScore, and Metascore "
+			statement3 = "3.)Enter 'earnings' to view a Grouped bar chart comparing the imdbScore to the GoodReads rating of the movies that are ranked in the top 5 for box office earnings"
+			statement4 = "4.)Enter 'year' to view show grouped bar chart of all adaptations in a year of your choosing comparing Good Read’s score to Metascore and imdbScore"
 			print(statement1 + "\n" + statement2 + "\n" + statement3 + "\n" + statement4)
 		else:
 			print("Sorry, that command appears to be invalid. Enter 'help' for a list of valid commands.")
 		command = input("Enter a command or enter quit to terminate program: ")
+	print("Bye!")
+
 # final_adaptation_list = []
 # for book in testing_data_stuff:
 # 	final_adaptation_list.append(getOMDBdata(book.book_title))
