@@ -147,17 +147,13 @@ def scrape_and_run():
 
 			try:
 
-				# title_name = t.get_text()
-				# author_name = a.get_text()
-				# rating_stuff = p.get_text()
-				# print(title_name, author_name, published_info)
+
 
 				csv_write.writerow({
 					'title': a_book.book_title.split("(")[0],
 					'author': a_book.book_author,
 					'avg. rating': a_book.book_ratings})
-				# '# of ratings': rating_stuff.split()[4],
-				# 'year published': rating_stuff.split()[8] }
+
 
 				books_save += 1
 			## error handelling for long file names
@@ -304,7 +300,7 @@ def insert_omdb_data():
 		cur.execute(statement_json, insertion)
 	conn.commit()
 	conn.close()
-# def get_movie_data():
+
 
 def load_books():
 	all_books = []
@@ -482,7 +478,6 @@ def score_by_year():
 
 	fig = go.Figure(data=data, layout=layout)
 	py.plot(fig, filename='grouped-bar-2')
-	# conn.commit()
 	conn.close()
 
 if __name__ == '__main__':
@@ -493,7 +488,7 @@ if __name__ == '__main__':
 
 	insert_omdb_data()
 	getting_book_movie_mapping()
-
+	print("Hi! We've all heard people say that 'the book was better than the movie' Sometimes they're right, sometimes not. Wouldn't it be cool to find out?")
 	command = input("Enter a command or help for more options. Enter quit to terminate program: ")
 	while command != 'quit':
 		if command == "ratings":
@@ -514,9 +509,3 @@ if __name__ == '__main__':
 			print("Sorry, that command appears to be invalid. Enter 'help' for a list of valid commands.")
 		command = input("Enter a command or enter quit to terminate program: ")
 	print("Bye!")
-
-# final_adaptation_list = []
-# for book in testing_data_stuff:
-# 	final_adaptation_list.append(getOMDBdata(book.book_title))
-# print(final_adaptation_list)
-# print("{} adaptations".format(len(final_adaptation_list)))
